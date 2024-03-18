@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_inicio"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_perfil"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_usuarios"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_usuarios"
+        android:label="@string/menu_usuarios"
+        tools:layout="@layout/fragment_usuarios" />
+
+    <fragment
+        android:id="@+id/nav_registroc"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_registroc"
+        android:label="@string/menu_cuadrilla"
+        tools:layout="@layout/fragment_registroc" />
+
+    <fragment
+        android:id="@+id/nav_agendar"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_agendar"
+        android:label="@string/menu_agendar"
+        tools:layout="@layout/fragment_agendar" />
+
+    <fragment
+        android:id="@+id/nav_visitast"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_visitast"
+        android:label="@string/menu_visitas"
+        tools:layout="@layout/fragment_visitast" />
+
+    <fragment
+        android:id="@+id/nav_informacion"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_informacion"
+        android:label="@string/menu_informacion"
+        tools:layout="@layout/fragment_informacion" />
+</navigation>

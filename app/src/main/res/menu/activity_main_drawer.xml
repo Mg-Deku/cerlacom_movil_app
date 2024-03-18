@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_inicio" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_user"
+            android:title="@string/menu_perfil" />
+        <item
+            android:id="@+id/nav_usuarios"
+            android:icon="@drawable/ic_usuarios"
+            android:title="@string/menu_usuarios" />
+
+        <item
+            android:id="@+id/nav_registroc"
+            android:icon="@drawable/ic_registrar"
+            android:title="@string/menu_cuadrilla"/>
+
+        <item
+            android:id="@+id/nav_agendar"
+            android:icon="@drawable/ic_agendar"
+            android:title="@string/menu_agendar"/>
+
+        <item
+        android:id="@+id/nav_visitast"
+        android:icon="@drawable/ic_visitas"
+        android:title="@string/menu_visitas"/>
+
+        <item
+            android:id="@+id/nav_informacion"
+            android:icon="@drawable/ic_informacion"
+            android:title="@string/menu_informacion"/>
+
+
+    </group>
+</menu>

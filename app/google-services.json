@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "192189825803",
+    "project_id": "cerlacom-movil",
+    "storage_bucket": "cerlacom-movil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192189825803:android:6e2f513429c3c7208bd80e",
+        "android_client_info": {
+          "package_name": "com.miguel.cerlacommobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLYwF-Qt1Uo9CTGxH1V0ZHhe6e1-PO0-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
