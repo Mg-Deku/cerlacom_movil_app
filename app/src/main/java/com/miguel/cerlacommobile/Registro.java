@@ -25,6 +25,7 @@ public class Registro extends AppCompatActivity {
         EditText editText_contraseña = findViewById(R.id.editText_contraseña);
         EditText editText_nombre = findViewById(R.id.editText_nombre);
         EditText editText_apellido = findViewById(R.id.editText_apellido);
+        EditText editText_telefono = findViewById(R.id.editText_telefono);
 
 
         Button btn_registrarse = findViewById(R.id.btn_registrarse);
@@ -35,6 +36,7 @@ public class Registro extends AppCompatActivity {
             String contraseña = editText_contraseña.getText().toString().trim();
             String nombre = editText_nombre.getText().toString().trim();
             String apellido = editText_apellido.getText().toString().trim();
+            String telefono = editText_telefono.getText().toString().trim();
 
             if(!usuario.isEmpty() && !contraseña.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty()){
 
@@ -47,6 +49,13 @@ public class Registro extends AppCompatActivity {
                             Usuario user = new Usuario();
 
                             user.nombre = nombre;
+                            user.apellido = apellido;
+                            user.correo = usuario;
+                            user.telefono = telefono;
+
+                            Login.ctlUsuario.crear_usuario(Login.auth.getUid(),user);
+
+                            Login.auth.signOut();
 
                             Toast.makeText(this,"Usuario creado correctamente", Toast.LENGTH_SHORT).show();
 

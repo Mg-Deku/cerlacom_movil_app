@@ -79,6 +79,34 @@
                 android:textSize="20sp"
                 android:autofillHints="emailAddress" />
 
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:text="Ingresa Contraseña:"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editText_contraseña"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:textColor="@color/negro"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                android:autofillHints="password" />
+
             <TextView
                 android:id="@+id/Text_nombre"
                 android:layout_width="match_parent"
@@ -112,7 +140,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="5dp"
-                android:text="Ingresa apellido"
+                android:text="Ingrese su apellido"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -132,30 +160,30 @@
                 android:autofillHints="emailAddress" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/text_telefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="5dp"
-                android:text="Ingresa Contraseña:"
+                android:text="Ingrese su numero de telefono"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText_contraseña"
+                android:id="@+id/editText_telefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:ems="10"
                 android:textColor="@color/negro"
-                android:hint="Contraseña"
-                android:inputType="textPassword"
+                android:hint="Telefono"
+                android:inputType="number"
                 android:textSize="20sp"
-                android:autofillHints="password" />
+                android:autofillHints="emailAddress" />
 
             <Button
                 android:id="@+id/btn_registrarse"
@@ -169,6 +197,8 @@
                 android:textColor="@color/blanco"
                 android:text="Registrar"
                 android:textSize="20sp" />
+
+
 
 
         </LinearLayout>

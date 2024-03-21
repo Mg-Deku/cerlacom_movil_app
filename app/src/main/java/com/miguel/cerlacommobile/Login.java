@@ -11,11 +11,20 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.miguel.cerlacommobile.Controladores.Ctl_usuario;
 
 public class Login extends AppCompatActivity {
 
     public static FirebaseAuth auth;
     public static FirebaseUser firebaseUser;
+
+    public static Ctl_usuario ctlUsuario;
+
+    DatabaseReference databaseReference;
+
+    FirebaseDatabase DB = FirebaseDatabase.getInstance();
 
 
     @Override
@@ -32,6 +41,10 @@ public class Login extends AppCompatActivity {
         Button btn_ingresar = findViewById(R.id.btn_ingresar);
 
         auth = FirebaseAuth.getInstance();
+
+        databaseReference = DB.getReference();
+
+        ctlUsuario = new Ctl_usuario(databaseReference);
 
         btn_ingresar.setOnClickListener(v -> {
 
