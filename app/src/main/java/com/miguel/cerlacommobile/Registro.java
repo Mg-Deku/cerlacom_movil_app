@@ -52,6 +52,8 @@ public class Registro extends AppCompatActivity {
                             user.apellido = apellido;
                             user.correo = usuario;
                             user.telefono = telefono;
+                            user.rol = "Usuario";
+
 
                             Login.ctlUsuario.crear_usuario(Login.auth.getUid(),user);
 

@@ -40,14 +40,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
 
-
-        if(Login.auth.getCurrentUser()!= null){
-            startActivity(new Intent(this, Principal.class));
-        }
-    }
 }
 

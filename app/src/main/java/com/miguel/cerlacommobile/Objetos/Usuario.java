@@ -16,6 +16,8 @@ public class Usuario {
 
     public String url_foto;
 
+    public String rol;
+
     public Usuario(){
 
     }
