@@ -23,6 +23,11 @@
             android:title="@string/menu_cuadrilla"/>
 
         <item
+            android:id="@+id/nav_cuadrilla"
+            android:icon="@drawable/ic_cuadrilla"
+            android:title="@string/cuadrillas"/>
+
+        <item
             android:id="@+id/nav_agendar"
             android:icon="@drawable/ic_agendar"
             android:title="@string/menu_agendar"/>
@@ -31,6 +36,12 @@
         android:id="@+id/nav_visitast"
         android:icon="@drawable/ic_visitas"
         android:title="@string/menu_visitas"/>
+
+        <item
+            android:id="@+id/nav_ver_visitas"
+            android:icon="@drawable/ic_ver_visitas"
+            android:title="@string/ver_visitas"/>
+
 
         <item
             android:id="@+id/nav_informacion"

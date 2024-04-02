@@ -50,7 +50,7 @@
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="@color/rojo"
                 android:padding="15dp"
-                android:text="Regitrarse"
+                android:text="Registrarse"
                 android:textColor="@color/blanco"
                 android:textSize="20sp" />
         </LinearLayout>

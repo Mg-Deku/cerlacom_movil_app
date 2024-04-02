@@ -12,4 +12,9 @@ public class Interfaces {
 
         void perfil(Usuario user);
     }
+
+    public interface Obt_rol{
+
+        void rol(String rol);
+    }
 }

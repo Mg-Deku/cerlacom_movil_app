@@ -14,17 +14,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.miguel.cerlacommobile.Controladores.Ctl_usuario;
+import com.miguel.cerlacommobile.Controladores.Interfaces;
 
 public class Login extends AppCompatActivity {
-
-    public static FirebaseAuth auth;
-    public static FirebaseUser firebaseUser;
-
-    public static Ctl_usuario ctlUsuario;
-
-    DatabaseReference databaseReference;
-
-    FirebaseDatabase DB = FirebaseDatabase.getInstance();
 
 
     @Override
@@ -40,11 +32,7 @@ public class Login extends AppCompatActivity {
         EditText editText_contraseña = findViewById(R.id.editText_contraseña);
         Button btn_ingresar = findViewById(R.id.btn_ingresar);
 
-        auth = FirebaseAuth.getInstance();
 
-        databaseReference = DB.getReference();
-
-        ctlUsuario = new Ctl_usuario(databaseReference);
 
         btn_ingresar.setOnClickListener(v -> {
 
@@ -54,16 +42,17 @@ public class Login extends AppCompatActivity {
 
             if(!usuario.isEmpty() && !contraseña.isEmpty()){
 
-                auth.signInWithEmailAndPassword(usuario,contraseña).addOnCompleteListener(this,task -> {
+                MainActivity.auth.signInWithEmailAndPassword(usuario,contraseña).addOnCompleteListener(this,task -> {
 
                     if(task.isSuccessful()){
 
-                        firebaseUser = auth.getCurrentUser();
+                        MainActivity.firebaseUser = MainActivity.auth.getCurrentUser();
 
-                        if(firebaseUser!=null){
-
+                        if(MainActivity.firebaseUser!=null){
 
                             startActivity(new Intent(this, Principal.class));
+
+
                         }
                     }
                 }).addOnFailureListener(this,e -> {
@@ -79,8 +68,11 @@ public class Login extends AppCompatActivity {
 
 
 
+
+
         });
 
 
     }
+
 }

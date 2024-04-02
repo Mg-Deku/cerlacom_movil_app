@@ -19,6 +19,7 @@ import com.miguel.cerlacommobile.Controladores.Interfaces;
 import com.miguel.cerlacommobile.Login;
 import com.miguel.cerlacommobile.MainActivity;
 import com.miguel.cerlacommobile.Objetos.Usuario;
+import com.miguel.cerlacommobile.Principal;
 import com.miguel.cerlacommobile.R;
 
 public class Fragment_perfil extends Fragment {
@@ -41,14 +42,16 @@ public class Fragment_perfil extends Fragment {
         Button btn_salir = vista.findViewById(R.id.btn_salir);
         Button btn_actualizar = vista.findViewById(R.id.btn_actualizar);
 
-        FirebaseUser firebaseUser = Login.auth.getCurrentUser();
+        FirebaseUser firebaseUser = MainActivity.auth.getCurrentUser();
 
 
         if(firebaseUser!= null){
 
             txt_correo.setText(firebaseUser.getEmail());
 
-            Login.ctlUsuario.obtener_ususario(Login.auth.getUid(), user -> {
+            txt_rol.setText(Principal.rol_usuario);
+
+            MainActivity.ctlUsuario.obtener_ususario(MainActivity.auth.getUid(), user -> {
 
 
                 editText_nombre.setText(user.nombre);
@@ -62,23 +65,40 @@ public class Fragment_perfil extends Fragment {
 
             btn_salir.setOnClickListener(v -> {
 
-                Login.auth.signOut();
+                MainActivity.auth.signOut();
                 requireActivity().finish();
                 startActivity(new Intent(vista.getContext(), MainActivity.class));
             });
 
             btn_actualizar.setOnClickListener(v -> {
 
+                String nombre = editText_nombre.getText().toString().trim();
+                String apellido = editText_apellido.getText().toString().trim();
+                String direccion = editText_direccion.getText().toString().trim();
+                String telefono = editText_telefono.getText().toString().trim();
+
+
                 Usuario user = new Usuario();
 
-                user.nombre = editText_nombre.getText().toString();
-                user.apellido = editText_apellido.getText().toString();
-                user.direccion = editText_direccion.getText().toString();
-                user.telefono  = editText_telefono.getText().toString();
+                if (!nombre.isEmpty()){
 
-                Login.ctlUsuario.actualizar_usuario(firebaseUser.getUid(),user);
+                    user.nombre = nombre;
+                    user.apellido = apellido;
+                    user.direccion = direccion;
+                    user.telefono  = telefono;
 
-                Toast.makeText(vista.getContext(),"Usuario actualizado", Toast.LENGTH_SHORT).show();
+                    MainActivity.ctlUsuario.actualizar_usuario(firebaseUser.getUid(),user);
+
+                    Toast.makeText(vista.getContext(),"Usuario actualizado", Toast.LENGTH_SHORT).show();
+                } else{
+
+                    Toast.makeText(vista.getContext(),"Complete los campos requeridos", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
+
             });
         }
 

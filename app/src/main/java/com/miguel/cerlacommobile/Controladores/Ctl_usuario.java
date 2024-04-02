@@ -39,6 +39,26 @@ public class Ctl_usuario {
         databaseReference.child("usuarios").child(uid).updateChildren(datos);
     }
 
+    public void obtener_rol(String uid, Interfaces.Obt_rol obtRol){
+
+        databaseReference.child("Usuarios").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    if (snapshot.child("rol").exists()){
+                        obtRol.rol(snapshot.child("rol").getValue().toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
     public void obtener_ususario(String uid, Interfaces.Obt_pérfil obtPérfil){
 
         databaseReference.child("usuarios").child(uid).addValueEventListener(new ValueEventListener() {
@@ -77,6 +97,8 @@ public class Ctl_usuario {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
+
         });
 
     }

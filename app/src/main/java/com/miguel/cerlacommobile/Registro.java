@@ -33,18 +33,18 @@ public class Registro extends AppCompatActivity {
         btn_registrarse.setOnClickListener(v -> {
 
             String usuario = editText_correo.getText().toString().trim();
-            String contraseña = editText_contraseña.getText().toString().trim();
+            String clave = editText_contraseña.getText().toString().trim();
             String nombre = editText_nombre.getText().toString().trim();
             String apellido = editText_apellido.getText().toString().trim();
             String telefono = editText_telefono.getText().toString().trim();
 
-            if(!usuario.isEmpty() && !contraseña.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty()){
+            if(!usuario.isEmpty() && !clave.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty()){
 
-                Login.auth.signInWithEmailAndPassword(usuario,contraseña).addOnCompleteListener(this,task -> {
+                MainActivity.auth.createUserWithEmailAndPassword(usuario,clave).addOnCompleteListener(this,task -> {
 
                     if(task.isSuccessful()){
 
-                        if(Login.auth.getCurrentUser()!= null){
+                        if(MainActivity.auth.getCurrentUser()!= null){
 
                             Usuario user = new Usuario();
 
@@ -55,9 +55,9 @@ public class Registro extends AppCompatActivity {
                             user.rol = "Usuario";
 
 
-                            Login.ctlUsuario.crear_usuario(Login.auth.getUid(),user);
+                            MainActivity.ctlUsuario.crear_usuario(MainActivity.auth.getUid(),user);
 
-                            Login.auth.signOut();
+                            MainActivity.auth.signOut();
 
                             Toast.makeText(this,"Usuario creado correctamente", Toast.LENGTH_SHORT).show();
 

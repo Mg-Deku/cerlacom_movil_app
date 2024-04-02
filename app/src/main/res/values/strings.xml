@@ -58,6 +58,8 @@
     <string name="menu_usuarios">Usuarios</string>
     <string name="menu_cuadrilla">Registrar cuadrilla</string>
     <string name="menu_citas">Citas técnicas</string>
+    <string name="cuadrillas">Cuadrillas</string>
+    <string name="ver_visitas">Ver visitas</string>
 
     <string name="menu_agendar">Agendar visita</string>
 
