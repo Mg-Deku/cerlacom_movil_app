@@ -1,5 +1,6 @@
 package com.miguel.cerlacommobile.Adaptadores;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.core.Context;
+
 import com.miguel.cerlacommobile.Holders.Holder_usuario;
 import com.miguel.cerlacommobile.Objetos.Usuario;
 import com.miguel.cerlacommobile.R;
@@ -18,8 +19,6 @@ import java.util.List;
 public class Adapter_usuario extends RecyclerView.Adapter<Holder_usuario> {
 
     public List<Usuario> list_usuario = new ArrayList<>();
-
-
 
     Context context;
 
