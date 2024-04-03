@@ -9,5 +9,7 @@ public class Holder_cuadrilla extends RecyclerView.ViewHolder{
 
     public Holder_cuadrilla(@NonNull View itemView) {
         super(itemView);
+
+
     }
 }

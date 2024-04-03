@@ -9,6 +9,8 @@ public class Holder_ver_visita extends RecyclerView.ViewHolder{
 
     public Holder_ver_visita(@NonNull View itemView) {
         super(itemView);
+
+
     }
 }
 

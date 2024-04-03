@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class Holder_visita_tecnica extends RecyclerView.ViewHolder{
 
     public Holder_visita_tecnica(@NonNull View itemView) {
+
         super(itemView);
     }
 }
