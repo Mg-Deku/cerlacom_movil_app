@@ -4,6 +4,7 @@
     <item
         android:id="@+id/action_settings"
         android:iconTint="@color/blanco"
+
         android:orderInCategory="100"
         android:icon="@drawable/ic_salir"
         app:showAsAction="ifRoom"

@@ -201,18 +201,7 @@
                 android:text="Actualizar Datos"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btn_salir"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="70dp"
-                android:backgroundTint="@color/rojo"
-                android:padding="15dp"
-                android:textColor="@color/blanco"
-                android:text="SALIR"
-                android:textSize="20sp" />
+
 
 
 

@@ -39,7 +39,7 @@ public class Fragment_perfil extends Fragment {
         EditText editText_telefono = vista.findViewById(R.id.editText_telefono);
         EditText editText_direccion = vista.findViewById(R.id.editText_direccion);
 
-        Button btn_salir = vista.findViewById(R.id.btn_salir);
+
         Button btn_actualizar = vista.findViewById(R.id.btn_actualizar);
 
         FirebaseUser firebaseUser = MainActivity.auth.getCurrentUser();
@@ -63,12 +63,7 @@ public class Fragment_perfil extends Fragment {
 
             });
 
-            btn_salir.setOnClickListener(v -> {
 
-                MainActivity.auth.signOut();
-                requireActivity().finish();
-                startActivity(new Intent(vista.getContext(), MainActivity.class));
-            });
 
             btn_actualizar.setOnClickListener(v -> {
 

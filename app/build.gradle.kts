@@ -48,6 +48,12 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.3"))
     implementation("com.google.firebase:firebase-analytics")
 
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
+
+    implementation ("androidx.annotation:annotation:1.3.0")
+    implementation ("com.android.support:support-annotations:28.0.0")
+
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
 }
