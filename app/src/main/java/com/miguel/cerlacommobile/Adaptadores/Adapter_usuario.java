@@ -62,6 +62,7 @@ public class Adapter_usuario extends RecyclerView.Adapter<Holder_usuario> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list_usuario.size();
     }
+
 }

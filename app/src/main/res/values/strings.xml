@@ -68,5 +68,12 @@
     <string name="menu_perfil">Perfil</string>
     <string name="menu_informacion">Info</string>
 
+    <string-array name="Roles">
+        <item>Seleciona</item>
+        <item>Usuario</item>
+        <item>Cuadrilla</item>
+        <item>Operador</item>
+
+    </string-array>
 
 </resources>

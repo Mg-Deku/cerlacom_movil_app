@@ -7,6 +7,12 @@ public class Agendar {
     public String estado;
     public String horaFinalizado;
 
+    public double latitud;
+    public double longitud;
+
+    public String operador;
+
+
     public Agendar(){
 
 
@@ -40,6 +46,14 @@ public class Agendar {
 
     public void setHoraFinalizado(String horaFinalizado) {
         this.horaFinalizado = horaFinalizado;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
     }
 
 

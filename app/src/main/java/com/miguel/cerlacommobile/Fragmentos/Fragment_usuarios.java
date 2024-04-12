@@ -1,9 +1,11 @@
 package com.miguel.cerlacommobile.Fragmentos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -14,12 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.miguel.cerlacommobile.Adaptadores.Adapter_usuario;
+import com.miguel.cerlacommobile.Add_usuarios;
 import com.miguel.cerlacommobile.MainActivity;
 import com.miguel.cerlacommobile.R;
 
 public class Fragment_usuarios extends Fragment {
-
-
 
 
     @Nullable
@@ -31,6 +32,7 @@ public class Fragment_usuarios extends Fragment {
         ProgressBar progressBar = vista.findViewById(R.id.progressBar);
         TextView txt_existe = vista.findViewById(R.id.txt_existe);
         TextView txt_contador = vista.findViewById(R.id.txt_contador);
+        Button btn_add = vista.findViewById(R.id.btn_add);
 
         Adapter_usuario lista_usuarios = new Adapter_usuario(vista.getContext());
 
@@ -38,7 +40,14 @@ public class Fragment_usuarios extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(lista_usuarios);
 
-        MainActivity.ctlUsuario.VerUsuarios(lista_usuarios, txt_existe, progressBar, txt_contador);
+        MainActivity.ctlUsuario.VerUsuarios(lista_usuarios,MainActivity.auth.getUid(), txt_existe, progressBar, txt_contador);
+
+        btn_add.setOnClickListener(v -> {
+
+            startActivity(new Intent(vista.getContext(), Add_usuarios.class));
+
+
+        });
 
 
         return vista;

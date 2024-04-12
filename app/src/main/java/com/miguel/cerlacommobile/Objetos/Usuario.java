@@ -18,6 +18,8 @@ public class Usuario {
 
     public String rol;
 
+    public String numero_cuadrilla;
+
     public Usuario(){
 
     }

@@ -11,6 +11,7 @@ public class Holder_ver_visita extends RecyclerView.ViewHolder{
         super(itemView);
 
 
+
     }
 }
 

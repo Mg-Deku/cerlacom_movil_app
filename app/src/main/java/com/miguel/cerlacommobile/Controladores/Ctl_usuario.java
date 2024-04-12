@@ -1,5 +1,6 @@
 package com.miguel.cerlacommobile.Controladores;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -110,50 +111,57 @@ public class Ctl_usuario {
 
     }
 
-    public void VerUsuarios(Adapter_usuario list_usuarios,final TextView txt_existe, final ProgressBar progressBar, TextView txt_contandor){
+    public void VerUsuarios(Adapter_usuario list_usuarios,String uid,final TextView txt_existe, final ProgressBar progressBar, TextView txt_contandor){
         progressBar.setVisibility(View.VISIBLE);
 
         txt_existe.setVisibility(View.VISIBLE);
 
-        databaseReference.child("usuario").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("usuarios").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                list_usuarios.ClearUsuario();
                 if(snapshot.exists()){
 
-                    list_usuarios.ClearUsuario();
                     int contador = 0;
 
                     for(DataSnapshot datos : snapshot.getChildren()){
-                        Usuario user = new Usuario();
-                        user.uid = datos.getKey();
 
-                        if(datos.child("nombre").exists()){
-                            user.nombre = Objects.requireNonNull(datos.child("nombre").getValue()).toString();
+                        if(!Objects.equals(datos.getKey(), uid)){
+
+                            Usuario user = new Usuario();
+                            user.uid = datos.getKey();
+
+
+                            if(datos.child("nombre").exists()){
+                                user.nombre = Objects.requireNonNull(datos.child("nombre").getValue()).toString();
+                            }
+
+                            if(datos.child("apellido").exists()){
+                                user.apellido = Objects.requireNonNull(datos.child("apellido").getValue()).toString();
+                            }
+
+                            if(datos.child("telefono").exists()){
+                                user.telefono = Objects.requireNonNull(datos.child("telefono").getValue()).toString();
+                            }
+
+                            if(datos.child("direccion").exists()){
+                                user.direccion = Objects.requireNonNull(datos.child("direccion").getValue()).toString();
+                            }
+
+                            if(datos.child("correo").exists()){
+                                user.rol = Objects.requireNonNull(datos.child("correo").getValue()).toString();
+                            }
+
+                            if(datos.child("rol").exists()){
+                                user.rol = Objects.requireNonNull(datos.child("rol").getValue()).toString();
+                            }
+
+                            list_usuarios.AddUsuario(user);
+                            contador++;
+
                         }
 
-                        if(datos.child("apellido").exists()){
-                            user.apellido = Objects.requireNonNull(datos.child("apellido").getValue()).toString();
-                        }
-
-                        if(datos.child("telefono").exists()){
-                            user.telefono = Objects.requireNonNull(datos.child("telefono").getValue()).toString();
-                        }
-
-                        if(datos.child("direccion").exists()){
-                            user.direccion = Objects.requireNonNull(datos.child("direccion").getValue()).toString();
-                        }
-
-                        if(datos.child("correo").exists()){
-                            user.rol = Objects.requireNonNull(datos.child("correo").getValue()).toString();
-                        }
-
-                        if(datos.child("rol").exists()){
-                            user.rol = Objects.requireNonNull(datos.child("rol").getValue()).toString();
-                        }
-
-                        list_usuarios.AddUsuario(user);
-                        contador++;
                     }
                     txt_contandor.setText(contador + "Usuarios");
                     progressBar.setVisibility(View.GONE);
@@ -161,7 +169,6 @@ public class Ctl_usuario {
                     list_usuarios.notifyDataSetChanged();
 
                 }else{
-                    list_usuarios.ClearUsuario();
                     list_usuarios.notifyDataSetChanged();
                     progressBar.setVisibility(View.GONE);
                     txt_existe.setVisibility(View.VISIBLE);

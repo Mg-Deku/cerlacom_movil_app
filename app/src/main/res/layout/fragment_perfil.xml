@@ -42,7 +42,7 @@
                 android:scaleType="fitCenter"
                 android:contentDescription="imagen de perfil"
                 
-                android:src="@drawable/ic_user"
+                android:src="@drawable/perfil"
                 >
 
             </ImageView>

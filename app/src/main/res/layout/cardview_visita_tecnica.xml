@@ -1,6 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:id="@+id/card_visita_tecnica"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/card_foto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_map"
+            android:scaleType="fitCenter"
+            android:contentDescription="imagen"
+            android:layout_margin="5dp"
+
+            >
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            >
+            <TextView
+                android:id="@+id/card_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/card_apellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apellido"
+
+                >
+
+
+            </TextView>
+            <TextView
+                android:id="@+id/card_hora_inicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hora de inicio"
+
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/card_telefono"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telefono"
+
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/card_incoveniente"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Incovniente"
+
+                >
+            </TextView>
+
+
+
+            <TextView
+                android:id="@+id/card_estado"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:text="Estado"
+
+                >
+
+            </TextView>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

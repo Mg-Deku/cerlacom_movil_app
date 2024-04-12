@@ -23,6 +23,18 @@
         android:theme="@style/Theme.Cerlacom_movil"
         tools:targetApi="31">
         <activity
+            android:name=".Crear_cuadrilla"
+            android:exported="false" />
+        <activity
+            android:name=".Add_cuadrilla"
+            android:exported="false" />
+        <activity
+            android:name=".Add_usuarios"
+            android:exported="false" />
+        <activity
+            android:name=".Mapa"
+            android:exported="false" />
+        <activity
             android:name=".Principal"
             android:exported="false"
             android:label="@string/title_activity_principal"

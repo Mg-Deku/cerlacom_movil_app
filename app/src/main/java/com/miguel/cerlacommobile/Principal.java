@@ -36,8 +36,7 @@ public class Principal extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarPrincipal.toolbar);
-        binding.appBarPrincipal.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
+        binding.appBarPrincipal.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show());
         
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -60,7 +59,7 @@ public class Principal extends AppCompatActivity {
                 if(rol_usuario.equalsIgnoreCase("Administrador")){
 
                     mAppBarConfiguration = new AppBarConfiguration.Builder(
-                            R.id.nav_inicio, R.id.nav_perfil, R.id.nav_usuarios, R.id.nav_registroc,R.id.nav_cuadrilla, R.id.nav_agendar, R.id.nav_visitast,R.id.nav_ver_visitas, R.id.nav_informacion )
+                            R.id.nav_inicio, R.id.nav_perfil, R.id.nav_usuarios,R.id.nav_cuadrilla, R.id.nav_visitast, R.id.nav_informacion )
                             .setOpenableLayout(drawer)
                             .build();
 
@@ -68,22 +67,21 @@ public class Principal extends AppCompatActivity {
                 if (rol_usuario.equalsIgnoreCase("Operador")){
 
                     mAppBarConfiguration = new AppBarConfiguration.Builder(
-                            R.id.nav_inicio, R.id.nav_perfil, R.id.nav_usuarios, R.id.nav_registroc,R.id.nav_cuadrilla, R.id.nav_agendar, R.id.nav_visitast,R.id.nav_ver_visitas, R.id.nav_informacion )
+                            R.id.nav_inicio, R.id.nav_perfil, R.id.nav_usuarios,R.id.nav_cuadrilla, R.id.nav_visitast, R.id.nav_informacion )
                             .setOpenableLayout(drawer)
                             .build();
+
 
                 }
                 if (rol_usuario.equalsIgnoreCase("Cuadrilla")){
 
                     mAppBarConfiguration = new AppBarConfiguration.Builder(
-                            R.id.nav_inicio, R.id.nav_perfil, R.id.nav_ver_visitas, R.id.nav_informacion )
+                            R.id.nav_inicio, R.id.nav_perfil, R.id.nav_visitast, R.id.nav_informacion )
                             .setOpenableLayout(drawer)
                             .build();
 
                     binding.navView.getMenu().findItem(R.id.nav_usuarios).setVisible(false);
                     binding.navView.getMenu().findItem(R.id.nav_registroc).setVisible(false);
-                    binding.navView.getMenu().findItem(R.id.nav_agendar).setVisible(false);
-                    binding.navView.getMenu().findItem(R.id.nav_visitast).setVisible(false);
                     binding.navView.getMenu().findItem(R.id.nav_cuadrilla).setVisible(false);
 
                 }
@@ -91,14 +89,15 @@ public class Principal extends AppCompatActivity {
                 if (rol_usuario.equalsIgnoreCase("Usuario")){
 
                     mAppBarConfiguration = new AppBarConfiguration.Builder(
-                            R.id.nav_inicio, R.id.nav_perfil, R.id.nav_agendar, R.id.nav_visitast, R.id.nav_informacion )
+                            R.id.nav_inicio, R.id.nav_perfil,  R.id.nav_visitast, R.id.nav_informacion )
                             .setOpenableLayout(drawer)
                             .build();
 
                     binding.navView.getMenu().findItem(R.id.nav_usuarios).setVisible(false);
-                    binding.navView.getMenu().findItem(R.id.nav_registroc).setVisible(false);
+
                     binding.navView.getMenu().findItem(R.id.nav_cuadrilla).setVisible(false);
-                    binding.navView.getMenu().findItem(R.id.nav_ver_visitas).setVisible(false);
+
+
 
                 }
 

@@ -20,7 +20,7 @@
             android:id="@+id/card_foto"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/perfil"
             android:scaleType="fitCenter"
             android:contentDescription="imagen"
             android:layout_margin="5dp"

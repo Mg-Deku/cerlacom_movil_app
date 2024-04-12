@@ -31,15 +31,10 @@
 
     <fragment
         android:id="@+id/nav_cuadrilla"
-        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_agendar"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Frament_cuadrilla"
         android:label="@string/cuadrillas"
         tools:layout="@layout/fragment_cuadrilla" />
 
-    <fragment
-        android:id="@+id/nav_agendar"
-        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_agendar"
-        android:label="@string/menu_agendar"
-        tools:layout="@layout/fragment_agendar" />
 
     <fragment
         android:id="@+id/nav_visitast"
@@ -49,7 +44,7 @@
 
     <fragment
         android:id="@+id/nav_ver_visitas"
-        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_visitast"
+        android:name="com.miguel.cerlacommobile.Fragmentos.Fragment_ver_visita"
         android:label="@string/ver_visitas"
         tools:layout="@layout/fragment_ver_visita" />
 
